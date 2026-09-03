@@ -1,0 +1,57 @@
+:root {
+  --gold-dark: #846f2e;
+  --gold: #b8952e;
+  --gold-light: #f6efd9;
+  --gray: #98959d;
+  --gray-light: #e4e2e7;
+  --text: #2b2620;
+  --bg: #faf7f0;
+  --white: #ffffff;
+  --danger: #c85454;
+
+  --font-family: "Catamaran", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  display: block;
+}
+
+h1 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+p {
+  font-size: 0.875rem;
+  color: var(--gray);
+  line-height: 1.4;
+}
