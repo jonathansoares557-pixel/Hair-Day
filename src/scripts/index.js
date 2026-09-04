@@ -29,7 +29,15 @@
       { time: "14:00", period: "afternoon", client: "Rodrigo Gonçalves" },
       { time: "19:00", period: "night", client: "Rodrigo Gonçalves" },
     ];
+    dateInput.min = today; // impede escolher datas anteriores a hoje
     dateInput.value = today;
+  }
+
+  function handleDateChange() {
+    if (dateInput.value && dateInput.value < todayISO()) {
+      dateInput.value = todayISO();
+    }
+    render();
   }
 
   function getAppointmentsForCurrentDate() {
@@ -152,7 +160,7 @@
     const date = dateInput.value;
     const client = clientInput.value.trim();
 
-    if (!date || !selectedHour || !client) {
+    if (!date || !selectedHour || !client || date < todayISO()) {
       return;
     }
 
@@ -174,7 +182,7 @@
   document
     .querySelectorAll(".schedule .period")
     .forEach((ul) => ul.addEventListener("click", handleCancelClick));
-  dateInput.addEventListener("change", render);
+  dateInput.addEventListener("change", handleDateChange);
   form.addEventListener("submit", handleSubmit);
 
   seed();
